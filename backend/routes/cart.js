@@ -32,7 +32,7 @@ router.post("/", verifyAuth, async (req, res) => {
         productId: req.body.productId,
         qty: req.body.qty,
       });
-    } else if (req.body.qty === 0) {
+    } else if (req.body.qty <= 0) {
       // delete
       req.user.cart.splice(index, 1);
     } else {
